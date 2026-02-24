@@ -1,2 +1,1 @@
-require("filip.core")
-require("filip.lazy")
+require("config.lazy")
