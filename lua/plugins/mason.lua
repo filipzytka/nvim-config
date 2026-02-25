@@ -4,6 +4,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
+
   config = function()
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
@@ -21,7 +22,14 @@ return {
 
     mason_lspconfig.setup({
       ensure_installed = {
-        "lua_ls"
+        "lua_ls",
+        "html",
+        "cssls",
+        "eslint",
+        "tsserver",
+        "jsonls",
+        "rust_analyzer",
+        "omnisharp",
       },
     })
 

@@ -75,6 +75,8 @@ return {
 			capabilities = capabilities,
 		})
 
+        vim.lsp.config("roslyn", {})
+
 		vim.lsp.config("lua_ls", {
 			settings = {
 				Lua = {
