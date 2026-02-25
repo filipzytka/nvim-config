@@ -1,10 +1,8 @@
 return {
-    {
-        "Mofiqul/vscode.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd([[colorscheme vscode]])
-        end,
-    }
+    "neanias/everforest",
+    lazy = false,
+    priority = 1000,
+    config = function()
+        vim.cmd("colorscheme everforest")
+    end,
 }
