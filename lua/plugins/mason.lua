@@ -7,8 +7,6 @@ return {
 
   config = function()
     local mason = require("mason")
-    local mason_lspconfig = require("mason-lspconfig")
-    local mason_tool_installer = require("mason-tool-installer")
 
     mason.setup({
       ui = {
@@ -17,28 +15,6 @@ return {
           package_pending = "➜",
           package_uninstalled = "✗",
         },
-      },
-    })
-
-    mason_lspconfig.setup({
-      ensure_installed = {
-        "lua_ls",
-        "html",
-        "cssls",
-        "eslint",
-        "tsserver",
-        "jsonls",
-        "rust_analyzer",
-        "omnisharp",
-      },
-    })
-
-    mason_tool_installer.setup({
-      ensure_installed = {
-        "prettier",-- prettier formatter
-        "stylua", -- lua formatter
-        "isort", -- python formatter
-        "black", -- python formatter
       },
     })
   end,
