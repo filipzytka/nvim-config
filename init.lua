@@ -31,7 +31,8 @@ vim.keymap.set('n', "<C-j>", "<C-w>j" ,{noremap=true})
 vim.keymap.set('n', "<C-k>", "<C-w>k" ,{noremap=true})
 vim.keymap.set('n', "<C-l>", "<C-w>l" ,{noremap=true})
 
-vim.keymap.set('n', '<leader>g', ':silent grep! <cword> | copen<CR>')
+vim.keymap.set('n', '<leader>f', ':find ', { desc = "Find File" })
+vim.keymap.set('n', '<leader>s', ':silent grep! <cword> | copen<CR>')
 vim.keymap.set('n', ']q', ':cnext<CR>')
 vim.keymap.set('n', '[q', ':cprev<CR>')
 
@@ -41,3 +42,13 @@ vim.opt.wildmode = "longest:full,full"
 -- grep
 vim.opt.grepprg = "rg --vimgrep -uu"
 vim.opt.grepformat = "%f:%l:%c:%m"
+
+vim.keymap.set('n', '<leader>g', function()
+    local search = vim.fn.input("Search for: ")
+    
+    if search ~= "" then
+        vim.cmd("silent grep! " .. search)
+        vim.cmd("copen")
+        vim.cmd("redraw!")
+    end
+end)
